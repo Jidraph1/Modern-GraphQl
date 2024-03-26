@@ -1,0 +1,7 @@
+## Defining the Type Module will allow you to use the Modern ES6 "Import"
+
+# Its a better trait to use the database and the schema on different files, 
+This will be accessible by using the imports and the exports.
+
+- The schema defines how the data will look like
+- The Resolver define how to fetch the types defined in the Schema
