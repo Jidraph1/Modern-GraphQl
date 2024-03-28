@@ -10,6 +10,25 @@ const resolvers ={
     Query: {
         products() {
             return db.products
+        },
+        product(_, args){
+            return db.products.find((product) => product.id === args.id);
+        },
+        categories() {
+            return db.categories
+        },
+        category(_, args){
+            return db.categories.find((category) => category.id === args.id)
+        }
+    },
+    Category:{
+        products(parent){
+            return db.products.filter((p) => p.categoryId === parent.id)
+        }
+    },
+    Product:{
+        categories(parent){
+            return db.categories.filter((c) => c.productId === parent.id)
         }
     }
 }

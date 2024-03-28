@@ -6,10 +6,20 @@ type Product {
       description: String!
       quantity: Int!
       price: Float!
+      image: String!
       onSale: Boolean!
-    
+      categories: [Category!]!
+}
+
+type Category{
+    id: ID!
+    name: String!
+    products: [Product!]!
 }
 
 type Query {
-    products: [Product]
+    products: [Product!]!
+    product(id: ID!): Product
+    categories: [Category!]!
+    category(id: ID!): Category
 }`
