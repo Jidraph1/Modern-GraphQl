@@ -9,6 +9,7 @@ type Product {
       image: String!
       onSale: Boolean!
       categories: [Category!]!
+      reviews: [Review!]!
 }
 
 type Category{
@@ -17,6 +18,22 @@ type Category{
     products: [Product!]!
 }
 
+type Review{
+    id: ID!
+    date: String!
+    title: String!
+    comment: String!
+    rating: Int!
+}
+
+type Mutation{
+    addCategory(input: addCategoryInput): Category
+}
+
+input addCategoryInput{
+    name: String!
+
+}
 type Query {
     products: [Product!]!
     product(id: ID!): Product

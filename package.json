@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "@apollo/server": "^4.10.1",
-    "graphql": "^16.8.1"
+    "graphql": "^16.8.1",
+    "uuid": "^9.0.1"
   },
   "name": "more-graphql",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index"

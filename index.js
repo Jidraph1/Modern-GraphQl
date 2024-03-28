@@ -29,8 +29,24 @@ const resolvers ={
     Product:{
         categories(parent){
             return db.categories.filter((c) => c.productId === parent.id)
+        },
+        reviews(parent){
+            return db.reviews.filter((r) => r.productId === parent.id)
         }
+    },
+
+    Mutation : {
+       addCategory(_, args){
+        let category = { 
+            ...args.category,
+            id: Math.floor(Math.random()* 100).toString()
+        }
+        db.categories.push(category)
+        return category
+       }
     }
+
+
 }
 
 const server = new ApolloServer({
